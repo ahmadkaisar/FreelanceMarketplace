@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "292495233198",
+    "firebase_url": "https://freelance-marketplace.firebaseio.com",
+    "project_id": "freelance-marketplace",
+    "storage_bucket": "freelance-marketplace.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:292495233198:android:769e937c2b1bc360",
+        "android_client_info": {
+          "package_name": "com.example.d2a.freelancemarketplace"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "292495233198-jdegkq8bgcn7qqat1e4s00fq0ct67ge2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXm3XLrmKPnf27KI9N8fpEAG2mopxU__Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:292495233198:android:eb6c8e12bfc83bec",
+        "android_client_info": {
+          "package_name": "com.example.kenji.freelancemarketplace"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "292495233198-jdegkq8bgcn7qqat1e4s00fq0ct67ge2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXm3XLrmKPnf27KI9N8fpEAG2mopxU__Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
