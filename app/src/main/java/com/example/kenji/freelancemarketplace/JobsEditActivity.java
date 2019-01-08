@@ -28,27 +28,26 @@ public class JobsEditActivity extends AppCompatActivity {
     TextView message;
     String name, email, phone, jobsname, jobsdetail, taken;
     Button save;
-    private FirebaseAuth mAuth;
     private FirebaseUser user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jobs_edit);
         db = FirebaseFirestore.getInstance();
-        mAuth = FirebaseAuth.getInstance();
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
         user = mAuth.getCurrentUser();
         Intent intent = getIntent();
         EditText temp;
         save = findViewById(R.id.save);
-        temp = (EditText) findViewById(R.id.name);
+        temp = findViewById(R.id.name);
         temp.setText(intent.getStringExtra("Name"));
-        temp = (EditText) findViewById(R.id.phone);
+        temp = findViewById(R.id.phone);
         temp.setText(intent.getStringExtra("Phone"));
-        temp = (EditText) findViewById(R.id.jobsname);
+        temp = findViewById(R.id.jobsname);
         temp.setText(intent.getStringExtra("JobsName"));
-        temp = (EditText) findViewById(R.id.jobsdetail);
+        temp = findViewById(R.id.jobsdetail);
         temp.setText(intent.getStringExtra("JobsDetail"));
-        temp = (EditText) findViewById(R.id.taken);
+        temp = findViewById(R.id.taken);
         taken = intent.getStringExtra("Taken");
         if(taken.equalsIgnoreCase("Not Yet Taken")){
             temp.setText("");
@@ -68,16 +67,16 @@ public class JobsEditActivity extends AppCompatActivity {
     private void addNewJobs() {
         EditText temp;
         save = findViewById(R.id.save);
-        temp = (EditText) findViewById(R.id.name);
+        temp = findViewById(R.id.name);
         name = temp.getText().toString();
         email = user.getEmail();
-        temp = (EditText) findViewById(R.id.phone);
+        temp = findViewById(R.id.phone);
         phone = temp.getText().toString();
-        temp = (EditText) findViewById(R.id.jobsname);
+        temp = findViewById(R.id.jobsname);
         jobsname = temp.getText().toString();
-        temp = (EditText) findViewById(R.id.jobsdetail);
+        temp = findViewById(R.id.jobsdetail);
         jobsdetail = temp.getText().toString();
-        temp = (EditText) findViewById(R.id.taken);
+        temp = findViewById(R.id.taken);
         taken = temp.getText().toString();
         Map<String, Object> newJobs = new HashMap<>();
         newJobs.put(NAME_KEY, name);
