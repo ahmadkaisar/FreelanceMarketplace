@@ -49,7 +49,13 @@ public class JobsEditActivity extends AppCompatActivity {
         temp = (EditText) findViewById(R.id.jobsdetail);
         temp.setText(intent.getStringExtra("JobsDetail"));
         temp = (EditText) findViewById(R.id.taken);
-        temp.setText(intent.getStringExtra("Taken"));
+        taken = intent.getStringExtra("Taken");
+        if(taken.equalsIgnoreCase("Not Yet Taken")){
+            temp.setText("");
+        }
+        else{
+            temp.setText(taken);
+        }
         textDisplay = findViewById(R.id.textDisplay);
         save = findViewById(R.id.save);
         save.setOnClickListener(new View.OnClickListener() {
@@ -82,7 +88,10 @@ public class JobsEditActivity extends AppCompatActivity {
         newJobs.put(TAKEN, taken);
         try {
             db.collection("JobsList").document(email + "_" +jobsname).update(newJobs);
-            Toast.makeText(JobsEditActivity.this, "Jobs" + email + jobsname + "Edited", Toast.LENGTH_SHORT).show();
+            Toast.makeText(JobsEditActivity.this, "Jobs Edited", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(JobsEditActivity.this, MainActivity.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i);
         }
         catch(Exception e){
             Toast.makeText(JobsEditActivity.this, "Jobs Not Edited", Toast.LENGTH_SHORT).show();

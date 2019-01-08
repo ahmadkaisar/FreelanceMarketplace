@@ -68,7 +68,7 @@ public class JobsAddActivity extends AppCompatActivity {
         try {
             db.collection("JobsList").document(email + "_" +jobsname).set(newJobs);
             Toast.makeText(JobsAddActivity.this, "Jobs Added", Toast.LENGTH_SHORT).show();
-            Intent i = new Intent(JobsAddActivity.this, JobsPostedActivity.class);
+            Intent i = new Intent(JobsAddActivity.this, MainActivity.class);
             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i);
         }

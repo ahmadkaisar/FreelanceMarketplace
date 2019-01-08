@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.kenji.freelancemarketplace">
-
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -41,14 +41,15 @@
         </activity>
         <activity
             android:name=".JobsEditActivity"
-            android:parentActivityName=".JobsDetailActivity">
+            android:parentActivityName=".JobsPostedActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.kenji.freelancemarketplace.JobsDetailActivity" />
+                android:value="com.example.kenji.freelancemarketplace.JobsPostedActivity" />
         </activity>
         <activity
             android:name=".JobsPostedActivity"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MainActivity"
+            android:configChanges="orientation">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.kenji.freelancemarketplace.MainActivity" />
@@ -62,7 +63,8 @@
         </activity>
         <activity
             android:name=".JobsTakenActivity"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MainActivity"
+            android:configChanges="orientation">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.kenji.freelancemarketplace.MainActivity" />

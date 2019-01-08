@@ -13,6 +13,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private JobsAdapter adapter;
     private ArrayList<Jobs> JobsArrayList;
     private FloatingActionButton fab;
+    private TextView account;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
