@@ -5,6 +5,7 @@ import android.content.res.Configuration;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -28,7 +29,7 @@ public class JobsTakenActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private JobsAdapter adapter;
     private ArrayList<Jobs> JobsArrayList;
-    private FloatingActionButton fab;
+    SwipeRefreshLayout mSwipeRefreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,11 +53,24 @@ public class JobsTakenActivity extends AppCompatActivity {
         db = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
         addData();
+        mSwipeRefreshLayout = findViewById(R.id.refresh);
+        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                // Refresh items
+                recycle();
+            }
+        });
+        recycle();
+    }
+
+    public void recycle(){
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         adapter = new JobsAdapter(JobsArrayList);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(JobsTakenActivity.this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
+        mSwipeRefreshLayout.setRefreshing(false);
     }
 
     public void addData(){
